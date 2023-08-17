@@ -54,4 +54,4 @@
 2. Without Docker: To run grpc/http, go to the respective folder and run `npm start`.
 3. With Docker: WIP
 4. Check the terminal for the latency number.
-5. For grpc, use postman too to run the endpoints. Hittig port `0.0.0.0:50052` will give the latency data.
+5. For grpc, use postman too to run the endpoints. Hittig port `0.0.0.0:50052` will give the latency data on terminal.
