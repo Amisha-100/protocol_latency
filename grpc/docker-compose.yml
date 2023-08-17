@@ -1,0 +1,17 @@
+version: '3'
+services:
+  cart-ms:
+    build:
+      context: ./cart-ms
+    platform: linux/arm64/v8
+    mem_limit: 2000m
+    mem_reservation: 2000M
+
+  discount-ms:
+    build:
+      context: ./discount-ms
+    depends_on:
+      - cart-ms
+    platform: linux/arm64/v8
+    mem_limit: 2000m
+    mem_reservation: 2000M

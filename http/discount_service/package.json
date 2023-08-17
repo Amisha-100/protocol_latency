@@ -1,0 +1,14 @@
+{
+  "name": "discount-service",
+  "version": "1.0.0",
+  "description": "Service for applying discounts",
+  "dependencies": {
+      "express": "^4.17.1",
+      "grpc-tools": "^1.12.4",
+      "@grpc/grpc-js": "^1.9.0",
+      "google-protobuf": "^3.21.2",
+      "@grpc/proto-loader": "^0.7.8"
+  },
+  "author": "Amisha Shukla",
+  "license": "MIT"
+}
