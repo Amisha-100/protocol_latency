@@ -1,5 +1,5 @@
 {
-  "name": "discount-service",
+  "name": "cart-ms",
   "version": "1.0.0",
   "description": "Service for applying discounts",
   "dependencies": {

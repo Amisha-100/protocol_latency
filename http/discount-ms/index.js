@@ -6,7 +6,11 @@ app.get('/add_discount', (req, res) => {
     try {
         const startTime = process.hrtime();
 
-        const cartRequest = http.get('http://localhost:3000/get_cart', cartResponse => {
+        // To run via npm
+        // const cartRequest = http.get('http://localhost:3000/get_cart', cartResponse => {
+
+        // To run via docker
+        const cartRequest = http.get('http://cart:3000/get_cart', cartResponse => {
             let data = '';
             cartResponse.on('data', chunk => {
                 data += chunk;
@@ -43,7 +47,11 @@ app.listen(PORT, () => {
     let completedRequests = 0;
 
     for (let i = 0; i < numRequests; i++) {
-        const request = http.get('http://localhost:3001/add_discount', response => {
+        // To run via npm 
+        // const request = http.get('http://localhost:3001/add_discount', response => {
+        
+        // To run via docker
+        const request = http.get('http://discount:3001/add_discount', response => {
             let data = '';
             response.on('data', chunk => {
                 data += chunk;

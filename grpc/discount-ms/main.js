@@ -2,8 +2,14 @@ const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const path = require('path');
 
-const DISCOUNT_PROTO_PATH = path.join(__dirname, './protos/discount.proto');
-const CART_PROTO_PATH = path.join(__dirname, '../cart-ms/protos/cart.proto');
+
+// for running via npm
+// const DISCOUNT_PROTO_PATH = path.join(__dirname, './protos/discount.proto');
+// const CART_PROTO_PATH = path.join(__dirname, '../cart-ms/protos/cart.proto');
+
+// for running via docker
+const DISCOUNT_PROTO_PATH = path.join(__dirname, '/protos/discount.proto');
+const CART_PROTO_PATH = path.join(__dirname, '/protos/cart.proto');
 
 const discountPackageDefinition = protoLoader.loadSync(DISCOUNT_PROTO_PATH);
 const discountProto = grpc.loadPackageDefinition(discountPackageDefinition).discount_service;

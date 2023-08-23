@@ -11,9 +11,8 @@ const dataFilePath = path.join(__dirname, 'data', 'data_10kb.json');
 
 const server = new grpc.Server();
 
-
 function getCart(call, callback) {
-  console.log("Done!")
+  const startTime = process.hrtime();
   fs.readFile(dataFilePath, 'utf8', (err, data) => {
     if (err) {
       console.error(err);
@@ -22,18 +21,24 @@ function getCart(call, callback) {
         details: 'Internal Server Error',
       });
     }
-    
+
     console.log("LOOK111", data);
     const jsonData = JSON.parse(data);
+    const endTime = process.hrtime(startTime);
+
+    // Convert the elapsed time to milliseconds
+    const elapsedTimeMs = (endTime[0] * 1e9 + endTime[1]) / 1e6;
+
+    console.log(`Execution time: ${elapsedTimeMs.toFixed(2)} ms`);
     callback(null, jsonData);
   });
 }
 
 
+const serverPort = 50051;
 server.addService(cartProto.CartService.service, { getCart });
-const bindAddress = '0.0.0.0:50051'
-server.bindAsync(bindAddress, grpc.ServerCredentials.createInsecure(), () => {
+server.bindAsync(`0.0.0.0:${serverPort}`, grpc.ServerCredentials.createInsecure(), () => {
   server.start();
 });
 
-console.log(`gRPC server is running on ${bindAddress}`);
+console.log(`gRPC server is running on ${serverPort}`);

@@ -4,8 +4,11 @@ services:
     build:
       context: ./cart-ms
     platform: linux/arm64/v8
-    mem_limit: 2000m
-    mem_reservation: 2000M
+    command: node /app/main.js
+    mem_limit: 1000m
+    mem_reservation: 1000M
+    volumes: 
+      - ./cart-ms:/app
 
   discount-ms:
     build:
@@ -13,5 +16,8 @@ services:
     depends_on:
       - cart-ms
     platform: linux/arm64/v8
+    command: node /app/main.js
     mem_limit: 2000m
     mem_reservation: 2000M
+    volumes: 
+      - ./discount-ms:/app

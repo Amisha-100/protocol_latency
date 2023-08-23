@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package discount_service;
+
+service DiscountService {
+    rpc Request (Empty) returns (Response);
+}
+
+message Response {
+    string time_taken = 1;
+}
+
+message Empty {}

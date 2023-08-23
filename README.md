@@ -51,7 +51,8 @@
 
 #### Steps to run
 1. Clone the repository in your local folder.
-2. Without Docker: To run grpc/http, go to the respective folder and run `npm start`.
-3. With Docker: WIP
-4. Check the terminal for the latency number.
-5. For grpc, use postman too to run the endpoints. Hittig port `0.0.0.0:50052` will give the latency data on terminal.
+2. Go to index.js/main.js file and comment/uncomment the port url which based on how you are running the service (via npm/docker).
+3. Without Docker: To run grpc/http, go to the respective folder and run `npm start`.
+4. With Docker: To run grpc/http, go to the respective folder and run `docker compose up`.
+5. Check the terminal for the latency number.
+6. For grpc, use postman too to run the endpoints. Hittig port `0.0.0.0:50052` will give the latency data on terminal.

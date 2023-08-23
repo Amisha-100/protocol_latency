@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const dataFilePath = path.join(__dirname, 'data', 'data_10kb.json');
+const dataFilePath = path.join(__dirname, 'data', 'data_256kb.json');
 
 app.get('/get_cart', (req, res) => {
     fs.readFile(dataFilePath, 'utf8', (err, data) => {

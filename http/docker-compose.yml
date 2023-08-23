@@ -3,22 +3,22 @@ version: '3.8'
 services:
   cart:
     build:
-      context: ./cart_service
+      context: ./cart-ms
     platform: linux/arm64/v8
-    mem_limit: 2000m
-    mem_reservation: 2000M
+    mem_limit: 1000m
+    mem_reservation: 1000M
     command: node index.js
-    ports:
-      - "3000:3000"
+    volumes: 
+      - ./cart-ms:/app
 
   discount:
     build:
-      context: ./discount_service
+      context: ./discount-ms
     platform: linux/arm64/v8
     mem_limit: 2000m
     mem_reservation: 2000M
     command: node index.js
     depends_on:
       - cart
-    ports:
-      - "3001:3001"
+    volumes: 
+      - ./discount-ms:/app

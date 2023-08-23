@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-cart-ms": "node ./cart_service/index.js",
-    "start-discount-ms": "node ./discount_service/index.js",
+    "start-cart-ms": "node ./cart-ms/index.js",
+    "start-discount-ms": "node ./discount-ms/index.js",
     "start": "concurrently 'npm run start-discount-ms' 'npm run start-cart-ms'" 
   },
   "author": "",
