@@ -19,7 +19,7 @@ const cartProto = grpc.loadPackageDefinition(cartPackageDefinition).cart_service
 
 const server = new grpc.Server();
 
-const cartServiceAddress = '0.0.0.0:50051';
+const cartServiceAddress = 'cart-ms:50051'; //'0.0.0.0:50051';
 
 server.addService(discountProto.DiscountService.service, {
   Request: (_, callback) => {

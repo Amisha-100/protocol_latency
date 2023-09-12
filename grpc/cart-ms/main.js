@@ -28,8 +28,6 @@ function getCart(call, callback) {
 
     // Convert the elapsed time to milliseconds
     const elapsedTimeMs = (endTime[0] * 1e9 + endTime[1]) / 1e6;
-
-    console.log(`Execution time: ${elapsedTimeMs.toFixed(2)} ms`);
     callback(null, jsonData);
   });
 }
