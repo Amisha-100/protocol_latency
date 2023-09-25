@@ -7,15 +7,15 @@ import (
 
     "google.golang.org/grpc"
     "google.golang.org/grpc/reflection"
-	"google.golang.org/grpc/status"
-	"google.golang.org/grpc/codes"
+		"google.golang.org/grpc/status"
+		"google.golang.org/grpc/codes"
 
     pb "grpc-go/discount-ms/protos"
     cart "grpc-go/cart-ms/protos"
 )
 
 const (
-    discountServiceAddress = "0.0.0.0:50051" // Replace with the actual address of the discount service
+    discountServiceAddress = "0.0.0.0:50051"
     serverPort             = ":50052"
 )
 
